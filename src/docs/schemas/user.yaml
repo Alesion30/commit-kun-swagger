@@ -1,0 +1,35 @@
+# User
+type: object
+properties:
+  userUid:
+    description: ユーザーID
+    type: string
+    example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+  userName:
+    description: ユーザー名
+    type: string
+    example: "パンダ"
+  email:
+    description: メールアドレス
+    type: string
+    example: "fff@fff.com"
+  imageUrl:
+    description: 画像URL
+    type: string
+    example: ""
+  isActive:
+    description: アクティブかどうか
+    type: boolean
+    example: false
+  createdAt:
+    description: 作成日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"
+  updatedAt:
+    description: 更新日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"
+  deletedAt:
+    description: 削除日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"

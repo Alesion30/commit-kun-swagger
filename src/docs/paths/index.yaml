@@ -1,0 +1,3 @@
+# user ユーザー
+/user:
+  $ref: "./user/index.yaml"
