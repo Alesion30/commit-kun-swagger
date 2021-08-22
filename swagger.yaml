@@ -6,6 +6,74 @@ info:
 servers:
   - url: 'http://localhost:8880'
     description: Development Server
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user:
+    get:
+      tags:
+        - user
+      summary: ユーザー情報取得
+      description: ログインユーザーの情報を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+    post:
+      tags:
+        - user
+      summary: ユーザー情報取得
+      description: ログインユーザーの情報を取得
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userUid:
+                  description: ユーザーID
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
+                userName:
+                  description: ユーザー名
+                  type: string
+                  example: テストユーザー
+                email:
+                  description: メールアドレス
+                  type: string
+                  example: testuser@sample.com
+                imageUrl:
+                  description: 画像URL
+                  type: string
+                  example: ''
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
 components:
   securitySchemes:
     Bearer:
@@ -13,6 +81,42 @@ components:
       scheme: bearer
       description: Credentials or access token for API
   schemas:
+    User:
+      description: ユーザー
+      type: object
+      properties:
+        userUid:
+          description: ユーザーID
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        userName:
+          description: ユーザー名
+          type: string
+          example: パンダ
+        email:
+          description: メールアドレス
+          type: string
+          example: fff@fff.com
+        imageUrl:
+          description: 画像URL
+          type: string
+          example: ''
+        isActive:
+          description: アクティブかどうか
+          type: boolean
+          example: false
+        createdAt:
+          description: 作成日
+          type: string
+          example: '2021-08-22T19:42:16.058+09:00'
+        updatedAt:
+          description: 更新日
+          type: string
+          example: '2021-08-22T19:42:16.058+09:00'
+        deletedAt:
+          description: 削除日
+          type: string
+          example: '2021-08-22T19:42:16.058+09:00'
     Error:
       description: エラー
       type: object
