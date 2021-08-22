@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  description: hackU vscode拡張機能 バックエンドAPI仕様書
+  version: 1.0.0
+  title: working record API
+servers:
+  - url: 'http://localhost:8880'
+    description: Development Server
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      description: Credentials or access token for API
+  schemas:
+    Error:
+      description: エラー
+      type: object
+      properties:
+        status:
+          description: エラーコード
+          type: number
+          example: 401
+        message:
+          description: エラーメッセージ
+          type: string
+          example: Unauthorized
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          example:
+            status: 200
+            message: success
+    '400':
+      description: パラメータが不正
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 400
+            message: Bad Request
+    '401':
+      description: 認証失敗
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 401
+            message: Unauthorized token
+    '404':
+      description: データなし
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 404
+            message: Data is not found
+    '500':
+      description: サーバーエラー
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 500
+            message: Server Error
