@@ -1,5 +1,5 @@
-# creamy-swagger
-creamy バックエンドAPI仕様書
+# working-record-swagger
+hackU vscode拡張機能 バックエンドAPI仕様書
 
 ## 実行方法
 ```bash
