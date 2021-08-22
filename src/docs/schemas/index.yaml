@@ -1,0 +1,3 @@
+Error:
+  description: エラー
+  $ref: "./error.yaml"
