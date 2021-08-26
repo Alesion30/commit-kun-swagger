@@ -4,7 +4,7 @@
   tags:
     - user
   summary: "ユーザー情報取得"
-  description: "ログインユーザーの情報を取得"
+  description: "ユーザーの情報を取得"
   parameters:
     - name: "userUid"
       in: query
@@ -73,7 +73,7 @@ patch:
   tags:
     - user
   summary: "ユーザー情報を更新"
-  description: "ログインユーザーの情報を更新"
+  description: "ユーザーの情報を更新"
   requestBody:
     required: true
     content:

@@ -1,0 +1,19 @@
+type: object
+properties:
+  fileId:
+    description: "ファイルID"
+    type: number
+    example: 1
+  fileName:
+    description: "ファイル名"
+    type: string
+    example: "main.go"
+  workTime:
+    description: "作業時間"
+    type: number
+    example: 3
+  works:
+    description: "作業詳細一覧"
+    type: array
+    items:
+      $ref: "#components/schemas/WorkDetail"

@@ -2,9 +2,9 @@ get:
   # security:
   #   - Bearer: []
   tags:
-    - project
-  summary: "プロジェクト内の作業時間を取得"
-  description: "ユーザーのプロジェクトのフォルダ・ファイルごとの作業時間一覧を取得"
+    - folder
+  summary: "フォルダ内の作業時間を取得"
+  description: "ユーザーのフォルダ内のファイルごとの作業時間一覧を取得"
   parameters:
     - name: "userUid"
       in: query
@@ -12,11 +12,11 @@ get:
       required: true
       type: string
       example: "xWDG67WKXjROfE22eMEOd7rvYU12"
-    - name: "projectName"
+    - name: "path"
       in: query
-      description: "プロジェクト名"
+      description: "フォルダパス"
       type: string
-      example: "test_project"
+      example: "/test_project/test_folder/"
             
   responses:
     200:
@@ -25,7 +25,7 @@ get:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/ProjectWork"
+              $ref: "#/components/schemas/Folder"
     400:
       $ref: "#/components/responses/400"
     401:

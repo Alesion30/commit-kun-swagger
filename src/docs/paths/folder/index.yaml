@@ -1,0 +1,67 @@
+post:
+  # security:
+  #   - Bearer: []
+  tags:
+    - folder
+  summary: "フォルダ登録"
+  description: "ユーザのプロジェクトにpathのフォルダを登録"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            userUid:
+              description: ユーザーID
+              type: string
+              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+            path:
+              description: パス
+              type: string
+              example: "/test_project/test_folder/"
+  responses:
+    200:
+      $ref: "#/components/responses/200"
+    400:
+      $ref: "#/components/responses/400"
+    401:
+      $ref: "#/components/responses/401"
+    500:
+      $ref: "#/components/responses/500"
+
+patch:
+  # security:
+  #   - Bearer: []
+  tags:
+    - folder
+  summary: "フォルダ名変更"
+  description: "ユーザーのpathのフォルダ名を変更"
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            userUid:
+              description: ユーザーID
+              type: string
+              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+            path:
+              description: 変更前のフォルダへのパス
+              type: string
+              example: "/test_project/test_folder/"
+            changeFolderName:
+              description: 変更後のフォルダ名
+              type: string
+              example: "testFolder"
+  responses:
+    200:
+      $ref: "#/components/responses/200"
+    400:
+      $ref: "#/components/responses/400"
+    401:
+      $ref: "#/components/responses/401"
+    500:
+      $ref: "#/components/responses/500"

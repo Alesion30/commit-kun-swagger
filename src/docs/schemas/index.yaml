@@ -10,10 +10,22 @@ Project:
   description: プロジェクト
   $ref: "./project.yaml"
 
-Folder:
+FolderWork:
   description: フォルダ
-  $ref: "./folder.yaml"
+  $ref: "./folderWork.yaml"
 
 ProjectWork:
   description: プロジェクト内の作業時間
   $ref: "./projectWork.yaml"
+
+FileWork:
+  description: ファイルの作業時間
+  $ref: "./fileWork.yaml"
+
+WorkDetail:
+  description: 作業詳細情報
+  $ref: "./workDetail.yaml"
+
+Work:
+  description: ファイル作業情報
+  $ref: "./work.yaml"

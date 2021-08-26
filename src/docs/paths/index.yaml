@@ -8,3 +8,24 @@
 
 /project/work:
   $ref: "./project/work.yaml"
+
+# folder
+/folder:
+  $ref: "./folder/index.yaml"
+
+/folder/work:
+  $ref: "./folder/work.yaml"
+
+# file
+/file:
+  $ref: "./file/index.yaml"
+
+/file/work:
+  $ref: "./file/work.yaml"
+
+# work
+/work/start:
+  $ref: "./work/start.yaml"
+
+/work/end:
+  $ref: "./work/end.yaml"

@@ -16,4 +16,4 @@ properties:
     description: フォルダ一覧
     type: array
     items:
-      $ref: "#/components/schemas/Folder"
+      $ref: "#components/schemas/FolderWork"

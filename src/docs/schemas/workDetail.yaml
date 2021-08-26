@@ -1,0 +1,18 @@
+type: object
+properties:
+  workId:
+    description: ワークID
+    type: number
+    example: 1
+  startedAt:
+    description: 作業開始時刻
+    type: string
+    example: "2021-08-26T18:52:45.952+09:00"
+  finishedAt:
+    description: 作業終了時刻
+    type: string
+    example: "2021-08-26T20:52:45.952+09:00"
+  workTime:
+    description: 作業時間
+    type: number
+    example: 2

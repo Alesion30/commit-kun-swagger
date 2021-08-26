@@ -4,7 +4,7 @@ get:
   tags:
     - project
   summary: "プロジェクト取得"
-  description: "ログインユーザーのプロジェクト一覧を取得"
+  description: "ユーザーのプロジェクト一覧を取得"
   parameters:
     - name: "userUid"
       in: query
@@ -34,7 +34,7 @@ post:
   tags:
     - project
   summary: "プロジェクト登録"
-  description: "ログインユーザーのプロジェクトを登録"
+  description: "ユーザーのプロジェクトを登録"
   requestBody:
     required: true
     content:
@@ -66,7 +66,7 @@ patch:
   tags:
     - project
   summary: "プロジェクト名変更"
-  description: "ログインユーザーのプロジェクト名を変更"
+  description: "ユーザーのプロジェクト名を変更"
   requestBody:
     required: true
     content:

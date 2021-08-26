@@ -20,22 +20,9 @@ properties:
     description: ファイル一覧
     type: array
     items:
-      type: object
-      properties:
-        fileId:
-          description: ファイルID
-          type: number
-          example: 1
-        fileName:
-          description: ファイル名
-          type: string
-          example: "test_file"
-        workTime:
-          description: 作業時間
-          type: number
-          example: 1.2
+      $ref: "#components/schemas/FileWork"
   folders:
     description: フォルダ一覧
     type: array
     items:
-      $ref: "#/components/schemas/Folder"
+      $ref: "#components/schemas/FolderWork"
