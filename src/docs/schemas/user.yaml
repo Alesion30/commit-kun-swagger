@@ -17,10 +17,6 @@ properties:
     description: 画像URL
     type: string
     example: ""
-  isActive:
-    description: アクティブかどうか
-    type: boolean
-    example: false
   createdAt:
     description: 作成日
     type: string

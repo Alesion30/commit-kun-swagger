@@ -1,0 +1,14 @@
+type: object
+properties:
+  projectId:
+    description: プロジェクトID
+    type: number
+    example: 1
+  projectName:
+    description: プロジェクト名
+    type: string
+    example: "test_project"
+  workTime:
+    description: 作業時間(h)
+    type: number
+    example: 3.5

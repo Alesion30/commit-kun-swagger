@@ -1,22 +1,26 @@
-　get:
+get:
   # security:
   #   - Bearer: []
   tags:
-    - user
-  summary: "ユーザー情報取得"
-  description: "ログインユーザーの情報を取得"
+    - project
+  summary: "プロジェクト取得"
+  description: "ログインユーザーのプロジェクト一覧を取得"
   parameters:
     - name: "userUid"
       in: query
       description: "ユーザーID"
       required: true
       type: string
+      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+            
   responses:
     200:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            type: array
+            items:
+              $ref: "#/components/schemas/Project"
     400:
       $ref: "#/components/responses/400"
     401:
@@ -28,9 +32,9 @@ post:
   # security:
   #   - Bearer: []
   tags:
-    - user
-  summary: "ユーザー情報登録"
-  description: "ユーザーの情報を登録"
+    - project
+  summary: "プロジェクト登録"
+  description: "ログインユーザーのプロジェクトを登録"
   requestBody:
     required: true
     content:
@@ -42,24 +46,13 @@ post:
               description: ユーザーID
               type: string
               example: "xWDG67WKXjROfE22eMEOd7rvYU12"
-            userName:
-              description: ユーザー名
+            projectName:
+              description: プロジェクト名
               type: string
-              example: "テストユーザー"
-            email:
-              description: メールアドレス
-              type: string
-              example: "testuser@sample.com"
-            imageUrl:
-              description: 画像URL
-              type: string
-              example: ""
+              example: "test_project"
   responses:
     200:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/User"
+      $ref: "#/components/responses/200"
     400:
       $ref: "#/components/responses/400"
     401:
@@ -68,12 +61,12 @@ post:
       $ref: "#/components/responses/500"
 
 patch:
-  security:
-    - Bearer: []
+  # security:
+  #   - Bearer: []
   tags:
-    - user
-  summary: "ユーザー情報を更新"
-  description: "ログインユーザーの情報を更新"
+    - project
+  summary: "プロジェクト名変更"
+  description: "ログインユーザーのプロジェクト名を変更"
   requestBody:
     required: true
     content:
@@ -85,24 +78,17 @@ patch:
               description: ユーザーID
               type: string
               example: "xWDG67WKXjROfE22eMEOd7rvYU12"
-            userName:
-              description: ユーザー名
+            projectName:
+              description: 変更前のプロジェクト名
               type: string
-              example: "テストユーザー"
-            email:
-              description: メールアドレス
+              example: "test_project"
+            changeProjectName:
+              description: 変更後のプロジェクト名
               type: string
-              example: "testuser@creamy.com"
-            imageUrl:
-              description: 画像URL
-              type: string
-              example: ""
+              example: "testProject"
   responses:
     200:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/User"
+      $ref: "#/components/responses/200"
     400:
       $ref: "#/components/responses/400"
     401:

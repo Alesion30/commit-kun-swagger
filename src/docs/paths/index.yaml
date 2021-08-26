@@ -1,3 +1,10 @@
 # user ユーザー
 /user:
   $ref: "./user/index.yaml"
+
+# project
+/project:
+  $ref: "./project/index.yaml"
+
+/project/work:
+  $ref: "./project/work.yaml"

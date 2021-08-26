@@ -5,3 +5,15 @@ User:
 Error:
   description: エラー
   $ref: "./error.yaml"
+
+Project:
+  description: プロジェクト
+  $ref: "./project.yaml"
+
+Folder:
+  description: フォルダ
+  $ref: "./folder.yaml"
+
+ProjectWork:
+  description: プロジェクト内の作業時間
+  $ref: "./projectWork.yaml"
