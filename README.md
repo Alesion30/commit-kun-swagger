@@ -1,5 +1,5 @@
-# working-record-swagger
-hackU vscode拡張機能 バックエンドAPI仕様書
+# commit-kun-swagger
+こみっとくん バックエンドAPI仕様書
 
 ## 実行方法
 ```bash
