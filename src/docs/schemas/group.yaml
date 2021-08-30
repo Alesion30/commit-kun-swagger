@@ -1,0 +1,10 @@
+type: object
+properties:
+  groupId:
+    description: グループID
+    type: number
+    example: 1
+  groupName:
+    description: グループ名
+    type: string
+    example: "プログラミング同好会"

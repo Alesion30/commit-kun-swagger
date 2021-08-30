@@ -29,3 +29,7 @@ WorkDetail:
 Work:
   description: ファイル作業情報
   $ref: "./work.yaml"
+
+Group:
+  description: グループ情報
+  $ref: "./group.yaml"
