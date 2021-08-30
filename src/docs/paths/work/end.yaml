@@ -20,6 +20,10 @@ post:
               description: パス
               type: string
               example: "/test_project/main.go"
+            typeNum:
+              description: タイプ数
+              type: number
+              example: 1000
   responses:
     200:
       $ref: "#/components/responses/200"

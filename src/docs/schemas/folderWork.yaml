@@ -13,9 +13,18 @@ properties:
     type: string
     example: "/test_folder/"
   workTime:
-    description: 作業時間
+    description: 作業時間(h)
     type: number
     example: 2.0
+  typeNum:
+    description: タイプ数
+    type: number
+    example: 1000
+  typeSpeed:
+    description: タイプスピード(タイプ数/s)
+    type: number
+    example: 0.1389
+
   files:
     description: ファイル一覧
     type: array

@@ -16,3 +16,11 @@ properties:
     description: 作業時間
     type: number
     example: 2
+  typeNum:
+    description: タイプ数
+    type: number
+    example: 1000
+  typeSpeed:
+    description: タイプスピード(タイプ数/s)
+    type: number
+    example: 0.1389
