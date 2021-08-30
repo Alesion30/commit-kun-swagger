@@ -11,7 +11,7 @@ tags:
     description: Operations about user
 paths:
   /user:
-    　get:
+    get:
       tags:
         - user
       summary: ユーザー情報取得
@@ -110,6 +110,71 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /group:
+    get:
+      tags:
+        - group
+      summary: グループ一覧取得
+      description: ユーザーの所属するグループ一覧を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+    post:
+      tags:
+        - group
+      summary: 新規グループ作成
+      description: ユーザーがオーナーの新規ルーム作成
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userUid:
+                  description: ユーザーID
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
+                groupName:
+                  description: グループ名
+                  type: string
+                  example: プログラミング同好会
+                members:
+                  description: グループ招待ユーザ
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      userUid:
+                        description: ユーザーID
+                        type: string
+                        example: aaa111
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -659,6 +724,18 @@ components:
           type: array
           items:
             $ref: '#components/schemas/WorkDetail'
+    Group:
+      description: グループ情報
+      type: object
+      properties:
+        groupId:
+          description: グループID
+          type: number
+          example: 1
+        groupName:
+          description: グループ名
+          type: string
+          example: プログラミング同好会
   responses:
     '200':
       description: 成功
