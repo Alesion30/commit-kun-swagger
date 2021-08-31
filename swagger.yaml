@@ -22,12 +22,13 @@ paths:
           description: ユーザーID
           required: true
           type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserInfo'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -67,7 +68,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserInfo'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -109,7 +110,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/UserInfo'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -128,6 +129,7 @@ paths:
           description: ユーザーID
           required: true
           type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
       responses:
         '200':
           content:
@@ -175,6 +177,147 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/200'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /group/user:
+    get:
+      tags:
+        - group
+      summary: グループのユーザ一覧取得
+      description: ユーザーの所属するグループのユーザ一覧を取得
+      parameters:
+        - name: groupId
+          in: query
+          description: グループID
+          required: true
+          type: number
+          example: 1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+    post:
+      tags:
+        - group
+      summary: 新規グループ作成
+      description: ユーザーがオーナーの新規ルーム作成
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userUid:
+                  description: ユーザーID
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
+                groupName:
+                  description: グループ名
+                  type: string
+                  example: プログラミング同好会
+                members:
+                  description: グループ招待ユーザ
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      userUid:
+                        description: ユーザーID
+                        type: string
+                        example: aaa111
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /group/rank/work:
+    get:
+      tags:
+        - group
+      summary: 作業時間ランキング取得
+      description: グループの作業時間ランキングを取得
+      parameters:
+        - name: groupId
+          in: query
+          description: グループID
+          required: true
+          type: number
+          example: 1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkRank'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /group/rank/type:
+    get:
+      tags:
+        - group
+      summary: タイプ数ランキング取得
+      description: グループのタイプ数ランキングを取得
+      parameters:
+        - name: groupId
+          in: query
+          description: グループID
+          required: true
+          type: number
+          example: 1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TypeRank'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /group/rank/speed:
+    get:
+      tags:
+        - group
+      summary: タイプスピードランキング取得
+      description: グループのタイプスピードランキングを取得
+      parameters:
+        - name: groupId
+          in: query
+          description: グループID
+          required: true
+          type: number
+          example: 1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpeedRank'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -560,8 +703,8 @@ components:
       scheme: bearer
       description: Credentials or access token for API
   schemas:
-    User:
-      description: ユーザー
+    UserInfo:
+      description: ユーザー情報
       type: object
       properties:
         userUid:
@@ -592,6 +735,26 @@ components:
           description: 削除日
           type: string
           example: '2021-08-22T19:42:16.058+09:00'
+    User:
+      description: ユーザ
+      type: object
+      properties:
+        userUid:
+          description: ユーザーID
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        userName:
+          description: ユーザー名
+          type: string
+          example: パンダ
+        email:
+          description: メールアドレス
+          type: string
+          example: fff@fff.com
+        imageUrl:
+          description: 画像URL
+          type: string
+          example: ''
     Error:
       description: エラー
       type: object
@@ -776,6 +939,78 @@ components:
           type: array
           items:
             $ref: '#components/schemas/WorkDetail'
+    WorkRank:
+      description: 作業時間ランキング
+      type: object
+      properties:
+        groupId:
+          description: グループID
+          type: number
+          example: 1
+        groupName:
+          description: グループ名
+          type: string
+          example: testGroup
+        workRank:
+          description: 作業ランキング
+          type: array
+          items:
+            type: object
+            properties:
+              workTime:
+                description: 作業時間
+                type: number
+                example: 2
+              user:
+                $ref: '#components/schemas/User'
+    TypeRank:
+      description: タイプ数ランキング
+      type: object
+      properties:
+        groupId:
+          description: グループID
+          type: number
+          example: 1
+        groupName:
+          description: グループ名
+          type: string
+          example: testGroup
+        typeRank:
+          description: タイプ数ランキング
+          type: array
+          items:
+            type: object
+            properties:
+              typeNum:
+                description: タイプ数
+                type: number
+                example: 1000
+              user:
+                $ref: '#components/schemas/User'
+    SpeedRank:
+      description: タイプスピードランキング
+      type: object
+      properties:
+        groupId:
+          description: グループID
+          type: number
+          example: 1
+        groupName:
+          description: グループ名
+          type: string
+          example: testGroup
+        speedRank:
+          description: タイプスピードランキング
+          type: array
+          items:
+            type: object
+            properties:
+              typeSpeed:
+                description: タイプスピード
+                type: number
+                example: 0.5
+              user:
+                $ref: '#components/schemas/User'
     Group:
       description: グループ情報
       type: object
