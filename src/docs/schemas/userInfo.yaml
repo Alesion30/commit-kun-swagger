@@ -1,3 +1,4 @@
+# UserInfo
 type: object
 properties:
   userUid:
@@ -16,3 +17,15 @@ properties:
     description: 画像URL
     type: string
     example: ""
+  createdAt:
+    description: 作成日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"
+  updatedAt:
+    description: 更新日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"
+  deletedAt:
+    description: 削除日
+    type: string
+    example: "2021-08-22T19:42:16.058+09:00"

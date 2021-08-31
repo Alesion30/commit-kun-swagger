@@ -1,0 +1,22 @@
+type: object
+properties:
+  groupId:
+    description: グループID
+    type: number
+    example: 1
+  groupName:
+    description: グループ名
+    type: string
+    example: "testGroup"
+  speedRank:
+    description: タイプスピードランキング
+    type: array
+    items:
+      type: object
+      properties:
+        typeSpeed: 
+          description: タイプスピード
+          type: number
+          example: 0.5
+        user:
+          $ref: "#components/schemas/User"

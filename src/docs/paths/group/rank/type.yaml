@@ -1,0 +1,26 @@
+get:
+  # security:
+  #   - Bearer: []
+  tags:
+    - group
+  summary: "タイプ数ランキング取得"
+  description: "グループのタイプ数ランキングを取得"
+  parameters:
+    - name: "groupId"
+      in: query
+      description: "グループID"
+      required: true
+      type: number
+      example: 1
+  responses:
+    200:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/TypeRank"
+    400:
+      $ref: "#/components/responses/400"
+    401:
+      $ref: "#/components/responses/401"
+    500:
+      $ref: "#/components/responses/500"

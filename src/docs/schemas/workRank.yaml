@@ -1,0 +1,22 @@
+type: object
+properties:
+  groupId:
+    description: グループID
+    type: number
+    example: 1
+  groupName:
+    description: グループ名
+    type: string
+    example: "testGroup"
+  workRank:
+    description: 作業ランキング
+    type: array
+    items:
+      type: object
+      properties:
+        workTime: 
+          description: 作業時間
+          type: number
+          example: 2.0
+        user:
+          $ref: "#components/schemas/User"

@@ -3,15 +3,15 @@ get:
   #   - Bearer: []
   tags:
     - group
-  summary: "グループ一覧取得"
-  description: "ユーザーの所属するグループ一覧を取得"
+  summary: "グループのユーザ一覧取得"
+  description: "ユーザーの所属するグループのユーザ一覧を取得"
   parameters:
-    - name: "userUid"
+    - name: "groupId"
       in: query
-      description: "ユーザーID"
+      description: "グループID"
       required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+      type: number
+      example: 1
   responses:
     200:
       content:

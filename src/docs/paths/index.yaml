@@ -6,6 +6,18 @@
 /group:
   $ref: "./group/index.yaml"
 
+/group/user:
+  $ref: "./group/user.yaml"
+
+/group/rank/work:
+  $ref: "./group/rank/work.yaml"
+
+/group/rank/type:
+  $ref: "./group/rank/type.yaml"
+
+/group/rank/speed:
+  $ref: "./group/rank/speed.yaml"
+
 # project
 /project:
   $ref: "./project/index.yaml"

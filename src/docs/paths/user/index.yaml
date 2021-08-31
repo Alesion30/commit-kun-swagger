@@ -11,12 +11,13 @@ get:
       description: "ユーザーID"
       required: true
       type: string
+      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: "#/components/schemas/UserInfo"
     400:
       $ref: "#/components/responses/400"
     401:
@@ -59,7 +60,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: "#/components/schemas/UserInfo"
     400:
       $ref: "#/components/responses/400"
     401:
@@ -102,7 +103,7 @@ patch:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/User"
+            $ref: "#/components/schemas/UserInfo"
     400:
       $ref: "#/components/responses/400"
     401:

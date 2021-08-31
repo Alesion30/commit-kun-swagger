@@ -1,0 +1,22 @@
+type: object
+properties:
+  groupId:
+    description: グループID
+    type: number
+    example: 1
+  groupName:
+    description: グループ名
+    type: string
+    example: "testGroup"
+  typeRank:
+    description: タイプ数ランキング
+    type: array
+    items:
+      type: object
+      properties:
+        typeNum: 
+          description: タイプ数
+          type: number
+          example: 1000
+        user:
+          $ref: "#components/schemas/User"

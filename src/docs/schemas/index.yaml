@@ -1,5 +1,9 @@
+UserInfo:
+  description: ユーザー情報
+  $ref: "./userInfo.yaml"
+
 User:
-  description: ユーザー
+  description: ユーザ
   $ref: "./user.yaml"
 
 Error:
@@ -29,6 +33,18 @@ WorkDetail:
 Work:
   description: ファイル作業情報
   $ref: "./work.yaml"
+
+WorkRank:
+  description: 作業時間ランキング
+  $ref: "./workRank.yaml"
+
+TypeRank:
+  description: タイプ数ランキング
+  $ref: "./typeRank.yaml"
+
+SpeedRank:
+  description: タイプスピードランキング
+  $ref: "./speedRank.yaml"
 
 Group:
   description: グループ情報
