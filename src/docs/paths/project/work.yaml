@@ -15,9 +15,20 @@ get:
     - name: "projectName"
       in: query
       description: "プロジェクト名"
+      required: true
       type: string
       example: "test_project"
-            
+    - name: "start"
+      in: query
+      description: "検索範囲下限時刻"
+      type: number
+      example: 1630385077
+    - name: "end"
+      in: query
+      description: "検索範囲上限時刻"
+      type: number
+      example: 1630390000
+              
   responses:
     200:
       content:
