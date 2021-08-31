@@ -2,6 +2,9 @@
 /user:
   $ref: "./user/index.yaml"
 
+/user/lang:
+  $ref: "./user/lang.yaml"
+
 # group
 /group:
   $ref: "./group/index.yaml"

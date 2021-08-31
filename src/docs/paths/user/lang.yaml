@@ -1,0 +1,36 @@
+get:
+  # security:
+  #   - Bearer: []
+  tags:
+    - user
+  summary: "言語ごとの作業時間取得"
+  description: "ユーザーの言語ごとの作業時間取得"
+  parameters:
+    - name: "userUid"
+      in: query
+      description: "ユーザーID"
+      required: true
+      type: string
+      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+    - name: "start"
+      in: query
+      description: "検索範囲下限時刻"
+      type: number
+      example: 1630385077
+    - name: "end"
+      in: query
+      description: "検索範囲上限時刻"
+      type: number
+      example: 1630390000
+  responses:
+    200:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/LangWork"
+    400:
+      $ref: "#/components/responses/400"
+    401:
+      $ref: "#/components/responses/401"
+    500:
+      $ref: "#/components/responses/500"

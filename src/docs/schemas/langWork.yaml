@@ -1,0 +1,28 @@
+type: object
+properties:
+  workTime:
+    description: 合計作業時間
+    type: number
+    example: 3.5
+  languages:
+    description: 言語ごとの作業時間
+    type: array
+    items:
+      type: object
+      properties:
+        languageId:
+          description: 言語ID
+          type: number
+          example: 33
+        language:
+          description: 言語
+          type: string
+          example: python
+        workTime:
+          description: 作業時間(h)
+          type: number
+          example: 1.0
+        percentage:
+          description: 作業合計に占める割合
+          type: number
+          example: 28.6

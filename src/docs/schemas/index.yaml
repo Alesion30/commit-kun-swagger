@@ -49,3 +49,7 @@ SpeedRank:
 Group:
   description: グループ情報
   $ref: "./group.yaml"
+
+LangWork:
+  description: 言語ごとの作業時間
+  $ref: "./langWork.yaml"
