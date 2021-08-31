@@ -117,6 +117,41 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/lang:
+    get:
+      tags:
+        - user
+      summary: 言語ごとの作業時間取得
+      description: ユーザーの言語ごとの作業時間取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        - name: start
+          in: query
+          description: 検索範囲下限時刻
+          type: number
+          example: 1630385077
+        - name: end
+          in: query
+          description: 検索範囲上限時刻
+          type: number
+          example: 1630390000
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LangWork'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /group:
     get:
       tags:
@@ -1086,6 +1121,36 @@ components:
           description: グループ名
           type: string
           example: プログラミング同好会
+    LangWork:
+      description: 言語ごとの作業時間
+      type: object
+      properties:
+        workTime:
+          description: 合計作業時間
+          type: number
+          example: 3.5
+        languages:
+          description: 言語ごとの作業時間
+          type: array
+          items:
+            type: object
+            properties:
+              languageId:
+                description: 言語ID
+                type: number
+                example: 33
+              language:
+                description: 言語
+                type: string
+                example: python
+              workTime:
+                description: 作業時間(h)
+                type: number
+                example: 1
+              percentage:
+                description: 作業合計に占める割合
+                type: number
+                example: 28.6
   responses:
     '200':
       description: 成功
