@@ -1,8 +1,8 @@
 {
-  "name": "working-record-swagger",
+  "name": "commit-kun-swagger",
   "version": "1.0.0",
   "description": "hackU vscode拡張機能 バックエンドAPI仕様書",
-  "homepage": "/working-record-swagger",
+  "homepage": "/commit-kun-swagger",
   "author": "Alesion30",
   "license": "ISC",
   "scripts": {
