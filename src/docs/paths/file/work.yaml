@@ -22,12 +22,12 @@ get:
       in: query
       description: "検索範囲下限時刻"
       type: string
-      example: "2006-01-02 15:04:05"
+      example: "2006-01-02T15:04:05.000"
     - name: "end"
       in: query
       description: "検索範囲上限時刻"
       type: string
-      example: "2006-01-03 15:04:05"
+      example: "2006-01-03T15:04:05.000"
             
   responses:
     200:
