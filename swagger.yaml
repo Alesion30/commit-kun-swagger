@@ -133,13 +133,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -300,13 +300,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -335,13 +335,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -370,13 +370,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -500,13 +500,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -606,13 +606,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
@@ -712,13 +712,13 @@ paths:
         - name: start
           in: query
           description: 検索範囲下限時刻
-          type: number
-          example: 1630385077
+          type: string
+          example: '2006-01-02 15:04:05'
         - name: end
           in: query
           description: 検索範囲上限時刻
-          type: number
-          example: 1630390000
+          type: string
+          example: '2006-01-03 15:04:05'
       responses:
         '200':
           content:
