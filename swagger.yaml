@@ -152,6 +152,31 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/level:
+    get:
+      tags:
+        - user
+      summary: 前日と現在のレベル取得
+      description: ユーザーの前日と現在のレベル取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompareLevel'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /group:
     get:
       tags:
@@ -1151,6 +1176,21 @@ components:
                 description: 作業合計に占める割合
                 type: number
                 example: 28.6
+    Level:
+      description: レベルと経験値
+      type: object
+      properties:
+        level:
+          description: レベル
+          type: number
+          example: 1
+        experiencePoint:
+          description: 経験値
+          type: number
+          example: 250
+    CompareLevel:
+      description: 前日と現在のレベルと経験値
+      $ref: ./comparelevel.yaml
   responses:
     '200':
       description: 成功
