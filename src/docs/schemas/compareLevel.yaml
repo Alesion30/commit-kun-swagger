@@ -1,0 +1,6 @@
+type: object
+properties:
+  yesterdayLevel:
+    $ref: "#components/schemas/Level"
+  todayLevel:
+    $ref: "#components/schemas/Level"

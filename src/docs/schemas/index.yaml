@@ -53,3 +53,11 @@ Group:
 LangWork:
   description: 言語ごとの作業時間
   $ref: "./langWork.yaml"
+
+Level:
+  description: レベルと経験値
+  $ref: "./level.yaml"
+
+CompareLevel:
+  description: 前日と現在のレベルと経験値
+  $ref: "./comparelevel.yaml"

@@ -1,0 +1,26 @@
+get:
+  # security:
+  #   - Bearer: []
+  tags:
+    - user
+  summary: "前日と現在のレベル取得"
+  description: "ユーザーの前日と現在のレベル取得"
+  parameters:
+    - name: "userUid"
+      in: query
+      description: "ユーザーID"
+      required: true
+      type: string
+      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+  responses:
+    200:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CompareLevel"
+    400:
+      $ref: "#/components/responses/400"
+    401:
+      $ref: "#/components/responses/401"
+    500:
+      $ref: "#/components/responses/500"

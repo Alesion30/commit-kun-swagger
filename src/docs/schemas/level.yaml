@@ -1,0 +1,10 @@
+type: object
+properties:
+  level:
+    description: レベル
+    type: number
+    example: 1
+  experiencePoint:
+    description: 経験値
+    type: number
+    example: 250
