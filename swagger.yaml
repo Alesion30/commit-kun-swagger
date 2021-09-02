@@ -177,6 +177,31 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/daily:
+    get:
+      tags:
+        - user
+      summary: デイリーミッションを取得
+      description: ユーザーのデイリーミッションを取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyMission'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /group:
     get:
       tags:
@@ -1191,6 +1216,18 @@ components:
     CompareLevel:
       description: 前日と現在のレベルと経験値
       $ref: ./comparelevel.yaml
+    DailyMission:
+      description: デイリーミッション
+      type: object
+      properties:
+        dailyMission:
+          description: デイリーミッション
+          type: string
+          example: Rustを100word以上書く
+        clearFlag:
+          description: クリアフラグ
+          type: bool
+          example: false
   responses:
     '200':
       description: 成功
