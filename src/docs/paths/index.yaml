@@ -8,6 +8,9 @@
 /user/level:
   $ref: "./user/level.yaml"
 
+/user/daily:
+  $ref: "./user/daily.yaml"
+
 # group
 /group:
   $ref: "./group/index.yaml"

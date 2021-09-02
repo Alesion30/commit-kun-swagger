@@ -61,3 +61,7 @@ Level:
 CompareLevel:
   description: 前日と現在のレベルと経験値
   $ref: "./comparelevel.yaml"
+
+DailyMission:
+  description: デイリーミッション
+  $ref: "./dailyMission.yaml"

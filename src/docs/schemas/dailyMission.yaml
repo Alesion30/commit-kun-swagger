@@ -1,0 +1,10 @@
+type: object
+properties:
+  dailyMission: 
+    description: デイリーミッション
+    type: string
+    example: Rustを100word以上書く
+  clearFlag:
+    description: クリアフラグ
+    type: bool
+    example: false
