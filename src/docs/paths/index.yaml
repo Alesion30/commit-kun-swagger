@@ -5,6 +5,9 @@
 /user/friend:
   $ref: "./user/friend/index.yaml"
 
+/user/friend/rank:
+  $ref: "./user/friend/rank.yaml"
+
 /user/lang:
   $ref: "./user/lang.yaml"
 
