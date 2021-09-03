@@ -115,6 +115,99 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/friend:
+    get:
+      tags:
+        - user
+      summary: フレンド一覧を取得
+      description: ログインユーザーのフレンド一覧を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserInfo'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+    post:
+      tags:
+        - user
+      summary: フレンド申請・承認
+      description: ログインユーザからフレンド申請・承認を行う
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userUid:
+                  description: ユーザーID
+                  type: string
+                  example: xWDG67WK2
+                friendUid:
+                  description: フレンドユーザーID
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '422':
+          description: すでにフレンドである
+          content:
+            application/json:
+              example:
+                status: 422
+                message: already friend
+        '500':
+          $ref: '#/components/responses/500'
+    delete:
+      tags:
+        - user
+      summary: フレンド解除
+      description: ログインユーザからフレンド解除を行う
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties: null
+                userUid:
+                  description: ユーザーID
+                  type: string
+                  example: xWDG67WK2
+                friendUid:
+                  description: フレンドユーザーID
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /user/lang:
     get:
       tags:
@@ -928,6 +1021,26 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /rank:
+    get:
+      tags:
+        - rank
+      summary: レベルランキング取得
+      description: レベルTop100を取得
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserLevel'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
 components:
   securitySchemes:
     Bearer:
@@ -1370,6 +1483,37 @@ components:
           description: 経験値
           type: number
           example: 100
+    UserLevel:
+      description: ユーザとレベル，経験値情報
+      type: object
+      properties:
+        level:
+          description: レベル
+          type: number
+          example: 1
+        experiencePoint:
+          description: 経験値
+          type: number
+          example: 250
+        user:
+          type: object
+          properties:
+            userUid:
+              description: ユーザーID
+              type: string
+              example: xWDG67WKXjROfE22eMEOd7rvYU12
+            userName:
+              description: ユーザー名
+              type: string
+              example: パンダ
+            email:
+              description: メールアドレス
+              type: string
+              example: fff@fff.com
+            imageUrl:
+              description: 画像URL
+              type: string
+              example: ''
   responses:
     '200':
       description: 成功
