@@ -76,8 +76,6 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     patch:
-      security:
-        - Bearer: []
       tags:
         - user
       summary: ユーザー情報を更新
@@ -221,6 +219,67 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActiveLog'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /user/commit:
+    get:
+      tags:
+        - user
+      summary: コミットをDBに反映
+      description: GitHubからユーザのコミット数を取得し，DBに反映させる
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /user/exp/days:
+    get:
+      tags:
+        - user
+      summary: 日毎の経験値を取得
+      description: ユーザーの期間内の日毎の取得経験値を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        - name: start
+          in: query
+          description: 検索範囲下限時刻
+          required: true
+          type: string
+          example: '2006-01-02T15:04:05.000'
+        - name: end
+          in: query
+          description: 検索範囲上限時刻
+          required: true
+          type: string
+          example: '2006-01-03T15:04:05.000'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DaysExp'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1299,6 +1358,18 @@ components:
         prComment:
           description: PRコメント数
           $ref: '#components/schemas/IntLog'
+    DaysExp:
+      description: 一日の取得経験値
+      type: object
+      properties:
+        date:
+          description: 日付
+          type: time
+          example: '2021-09-01T00:00:00+09:00'
+        experiencePoint:
+          description: 経験値
+          type: number
+          example: 100
   responses:
     '200':
       description: 成功
