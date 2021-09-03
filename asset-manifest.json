@@ -5,16 +5,16 @@
     "runtime-main.js": "/commit-kun-swagger/static/js/runtime-main.4baff078.js",
     "runtime-main.js.map": "/commit-kun-swagger/static/js/runtime-main.4baff078.js.map",
     "static/css/2.8cd21c33.chunk.css": "/commit-kun-swagger/static/css/2.8cd21c33.chunk.css",
-    "static/js/2.26adfe6c.chunk.js": "/commit-kun-swagger/static/js/2.26adfe6c.chunk.js",
-    "static/js/2.26adfe6c.chunk.js.map": "/commit-kun-swagger/static/js/2.26adfe6c.chunk.js.map",
+    "static/js/2.80d7d018.chunk.js": "/commit-kun-swagger/static/js/2.80d7d018.chunk.js",
+    "static/js/2.80d7d018.chunk.js.map": "/commit-kun-swagger/static/js/2.80d7d018.chunk.js.map",
     "index.html": "/commit-kun-swagger/index.html",
     "static/css/2.8cd21c33.chunk.css.map": "/commit-kun-swagger/static/css/2.8cd21c33.chunk.css.map",
-    "static/js/2.26adfe6c.chunk.js.LICENSE.txt": "/commit-kun-swagger/static/js/2.26adfe6c.chunk.js.LICENSE.txt"
+    "static/js/2.80d7d018.chunk.js.LICENSE.txt": "/commit-kun-swagger/static/js/2.80d7d018.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4baff078.js",
     "static/css/2.8cd21c33.chunk.css",
-    "static/js/2.26adfe6c.chunk.js",
+    "static/js/2.80d7d018.chunk.js",
     "static/js/main.d9eff4b3.chunk.js"
   ]
 }

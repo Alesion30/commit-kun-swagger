@@ -202,6 +202,31 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/active-log:
+    get:
+      tags:
+        - user
+      summary: 作業ログ取得
+      description: ユーザーの前日と今日の作業記録を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActiveLog'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /group:
     get:
       tags:
@@ -1228,6 +1253,52 @@ components:
           description: クリアフラグ
           type: bool
           example: false
+    IntLog:
+      description: int型のアクティブログ
+      type: object
+      properties:
+        yesterdayData:
+          description: 前日のデータ
+          type: number
+          example: 10
+        todayData:
+          description: 現在のデータ
+          type: number
+          example: 20
+    FloatLog:
+      description: float型のアクティブログ
+      type: object
+      properties:
+        yesterdayData:
+          description: 前日のデータ
+          type: number
+          example: 2.5
+        todayData:
+          description: 現在のデータ
+          type: number
+          example: 4.5
+    ActiveLog:
+      description: ユーザの今日と前日の作業ログ
+      type: object
+      properties:
+        level:
+          description: レベル
+          $ref: '#components/schemas/IntLog'
+        experiencePoint:
+          description: 経験値
+          $ref: '#components/schemas/IntLog'
+        workTime:
+          description: 作業時間
+          $ref: '#components/schemas/FloatLog'
+        typeNum:
+          description: タイプ数
+          $ref: '#components/schemas/IntLog'
+        commit:
+          description: コミット数
+          $ref: '#components/schemas/IntLog'
+        prComment:
+          description: PRコメント数
+          $ref: '#components/schemas/IntLog'
   responses:
     '200':
       description: 成功
