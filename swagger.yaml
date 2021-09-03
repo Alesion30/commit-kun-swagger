@@ -320,7 +320,7 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
-  /user/hours:
+  /user/hours/work:
     get:
       tags:
         - user
@@ -349,6 +349,76 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WorkHours'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /user/hours/type:
+    get:
+      tags:
+        - user
+      summary: 1時間ごとのタイプ数を取得
+      description: ユーザーの期間内の1時間ごとのタイプ数を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        - name: start
+          in: query
+          description: 検索範囲下限時刻
+          type: string
+          example: '2021-09-01T00:00:00.000'
+        - name: end
+          in: query
+          description: 検索範囲上限時刻
+          type: string
+          example: '2021-09-02T00:00:00.000'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TypeHours'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /user/hours/commit:
+    get:
+      tags:
+        - user
+      summary: 1時間ごとのコミット数を取得
+      description: ユーザーの期間内の1時間ごとのコミット数を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        - name: start
+          in: query
+          description: 検索範囲下限時刻
+          type: string
+          example: '2021-09-01T00:00:00.000'
+        - name: end
+          in: query
+          description: 検索範囲上限時刻
+          type: string
+          example: '2021-09-02T00:00:00.000'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommitHours'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1588,6 +1658,10 @@ components:
           description: 終了時刻
           type: string
           example: '2021-09-02T00:00:00+09:00'
+        workTime:
+          description: 合計作業時間
+          type: number
+          example: 300
         hours:
           description: 時間ごとの作業時間
           type: array
@@ -1602,6 +1676,66 @@ components:
                 description: 作業時間
                 type: number
                 example: 30
+    TypeHours:
+      description: 時間ごとのタイプ数
+      type: object
+      properties:
+        start:
+          description: 開始時刻
+          type: string
+          example: '2021-09-01T00:00:00+09:00'
+        end:
+          description: 終了時刻
+          type: string
+          example: '2021-09-02T00:00:00+09:00'
+        typeNum:
+          description: 合計タイプ数
+          type: number
+          example: 3000
+        hours:
+          description: 時間ごとのタイプ数
+          type: array
+          items:
+            type: object
+            properties:
+              hour:
+                description: 時間
+                type: number
+                example: 0
+              typeNum:
+                description: タイプ数
+                type: number
+                example: 200
+    CommitHours:
+      description: 時間ごとのコミット数
+      type: object
+      properties:
+        start:
+          description: 開始時刻
+          type: string
+          example: '2021-09-01T00:00:00+09:00'
+        end:
+          description: 終了時刻
+          type: string
+          example: '2021-09-02T00:00:00+09:00'
+        commit:
+          description: 合計コミット数
+          type: number
+          example: 10
+        hours:
+          description: 時間ごとのコミット数
+          type: array
+          items:
+            type: object
+            properties:
+              hour:
+                description: 時間
+                type: number
+                example: 0
+              commit:
+                description: コミット数
+                type: number
+                example: 2
   responses:
     '200':
       description: 成功
