@@ -107,3 +107,11 @@ UserLevel:
 WorkHours:
   description: 時間ごとの作業時間
   $ref: "./workHours.yaml"
+
+TypeHours:
+  description: 時間ごとのタイプ数
+  $ref: "./typeHours.yaml"
+
+CommitHours:
+  description: 時間ごとのコミット数
+  $ref: "./commitHours.yaml"

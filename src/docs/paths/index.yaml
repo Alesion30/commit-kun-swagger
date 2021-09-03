@@ -17,8 +17,14 @@
 /user/daily:
   $ref: "./user/daily.yaml"
 
-/user/hours:
-  $ref: "./user/hours.yaml"
+/user/hours/work:
+  $ref: "./user/hours/work.yaml"
+
+/user/hours/type:
+  $ref: "./user/hours/type.yaml"
+
+/user/hours/commit:
+  $ref: "./user/hours/commit.yaml"
 
 /user/active-log:
   $ref: "./user/active-log.yaml"
