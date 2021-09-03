@@ -11,6 +11,9 @@
 /user/daily:
   $ref: "./user/daily.yaml"
 
+/user/active-log:
+  $ref: "./user/active-log.yaml"
+
 # group
 /group:
   $ref: "./group/index.yaml"

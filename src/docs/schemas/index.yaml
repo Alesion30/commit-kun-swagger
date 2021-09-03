@@ -65,3 +65,33 @@ CompareLevel:
 DailyMission:
   description: デイリーミッション
   $ref: "./dailyMission.yaml"
+
+IntLog:
+  description: int型のアクティブログ
+  type: object
+  properties:
+    yesterdayData:
+      description: 前日のデータ
+      type: number
+      example: 10
+    todayData:
+      description: 現在のデータ
+      type: number
+      example: 20
+
+FloatLog:
+  description: float型のアクティブログ
+  type: object
+  properties:
+    yesterdayData:
+      description: 前日のデータ
+      type: number
+      example: 2.5
+    todayData:
+      description: 現在のデータ
+      type: number
+      example: 4.5
+
+ActiveLog:
+  description: ユーザの今日と前日の作業ログ
+  $ref: "./active-log.yaml"

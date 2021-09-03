@@ -1,0 +1,20 @@
+type: object
+properties:
+  level:
+    description: レベル
+    $ref: "#components/schemas/IntLog"
+  experiencePoint:
+    description: 経験値
+    $ref: "#components/schemas/IntLog"
+  workTime:
+    description: 作業時間
+    $ref: "#components/schemas/FloatLog"
+  typeNum:
+    description: タイプ数
+    $ref: "#components/schemas/IntLog"
+  commit:
+    description: コミット数
+    $ref: "#components/schemas/IntLog"
+  prComment:
+    description: PRコメント数
+    $ref: "#components/schemas/IntLog"
