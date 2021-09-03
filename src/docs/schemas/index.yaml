@@ -103,3 +103,7 @@ DaysExp:
 UserLevel:
   description: ユーザとレベル，経験値情報
   $ref: "./userLevel.yaml"
+
+WorkHours:
+  description: 時間ごとの作業時間
+  $ref: "./workHours.yaml"

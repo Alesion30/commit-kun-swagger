@@ -1,0 +1,25 @@
+type: object
+properties:
+  start:
+    description: 開始時刻
+    type: string
+    example: "2021-09-01T00:00:00+09:00"
+  end:
+    description: 終了時刻
+    type: string
+    example: "2021-09-02T00:00:00+09:00"
+  hours:
+    description: 時間ごとの作業時間
+    type: array
+    items:
+      type: object
+      properties:
+        hour:
+          description: 時間 
+          type: number
+          example: 0
+        workTime:
+          description: 作業時間
+          type: number
+          example: 30
+
