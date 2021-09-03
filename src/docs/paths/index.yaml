@@ -2,6 +2,9 @@
 /user:
   $ref: "./user/index.yaml"
 
+/user/friend:
+  $ref: "./user/friend/index.yaml"
+
 /user/lang:
   $ref: "./user/lang.yaml"
 
@@ -63,3 +66,7 @@
 
 /work/end:
   $ref: "./work/end.yaml"
+
+# rank
+/rank:
+  $ref: "./rank/index.yaml"

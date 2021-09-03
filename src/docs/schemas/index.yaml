@@ -99,3 +99,7 @@ ActiveLog:
 DaysExp:
   description: 一日の取得経験値
   $ref: "./daysExp.yaml"
+
+UserLevel:
+  description: ユーザとレベル，経験値情報
+  $ref: "./userLevel.yaml"

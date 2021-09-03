@@ -1,0 +1,29 @@
+type: object
+properties:
+  level:
+    description: レベル
+    type: number
+    example: 1
+  experiencePoint:
+    description: 経験値
+    type: number
+    example: 250
+  user:
+    type: object
+    properties:
+      userUid:
+        description: ユーザーID
+        type: string
+        example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+      userName:
+        description: ユーザー名
+        type: string
+        example: "パンダ"
+      email:
+        description: メールアドレス
+        type: string
+        example: "fff@fff.com"
+      imageUrl:
+        description: 画像URL
+        type: string
+        example: ""
