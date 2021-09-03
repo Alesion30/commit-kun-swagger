@@ -69,8 +69,8 @@ post:
       $ref: "#/components/responses/500"
 
 patch:
-  security:
-    - Bearer: []
+  # security:
+  #   - Bearer: []
   tags:
     - user
   summary: "ユーザー情報を更新"

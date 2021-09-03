@@ -95,3 +95,7 @@ FloatLog:
 ActiveLog:
   description: ユーザの今日と前日の作業ログ
   $ref: "./active-log.yaml"
+
+DaysExp:
+  description: 一日の取得経験値
+  $ref: "./daysExp.yaml"
