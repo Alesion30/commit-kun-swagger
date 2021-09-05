@@ -17,6 +17,10 @@ properties:
     description: 画像URL
     type: string
     example: ""
+  accessToken:
+    description: アクセストークン
+    type: string
+    example: ""
   createdAt:
     description: 作成日
     type: string
