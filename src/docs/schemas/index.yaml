@@ -66,6 +66,10 @@ DailyMission:
   description: デイリーミッション
   $ref: "./dailyMission.yaml"
 
+NormalMission:
+  description: 通常ミッション
+  $ref: "./normalMission.yaml"
+
 IntLog:
   description: int型のアクティブログ
   type: object

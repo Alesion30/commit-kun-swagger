@@ -14,8 +14,11 @@
 /user/level:
   $ref: "./user/level.yaml"
 
-/user/daily:
-  $ref: "./user/daily.yaml"
+/user/mission/daily:
+  $ref: "./user/mission/daily.yaml"
+
+/user/mission/noraml:
+  $ref: "./user/mission/normal.yaml"
 
 /user/hours/work:
   $ref: "./user/hours/work.yaml"

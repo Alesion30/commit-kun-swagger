@@ -3,8 +3,8 @@ get:
   #   - Bearer: []
   tags:
     - user
-  summary: "デイリーミッションを取得"
-  description: "ユーザーのデイリーミッションを取得"
+  summary: "通常ミッションを取得"
+  description: "ユーザーの通常ミッションを取得"
   parameters:
     - name: "userUid"
       in: query
@@ -17,7 +17,9 @@ get:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/DailyMission"
+            type: array
+            items:
+              $ref: "#/components/schemas/NormalMission"
     400:
       $ref: "#/components/responses/400"
     401:

@@ -7,7 +7,7 @@ properties:
   missionType:
     description: ミッションタイプ
     type: string
-    example: DailyMission
+    example: NormalMission
   clearRate:
     description: クリア率
     type: number
@@ -15,4 +15,4 @@ properties:
   experiencePoint:
     description: 経験値
     type: number
-    example: 50
+    example: 500
