@@ -3,8 +3,8 @@ get:
   #   - Bearer: []
   tags:
     - user
-  summary: "コミットをDBに反映"
-  description: "GitHubからユーザのコミット数を取得し，DBに反映させる"
+  summary: "コミット数,PRレビューコメント数をDBに反映"
+  description: "GitHubからユーザのコミット数,PRレビューコメント数を取得し，DBに反映させる"
   parameters:
     - name: "userUid"
       in: query

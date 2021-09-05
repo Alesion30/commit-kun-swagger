@@ -8,12 +8,12 @@ properties:
     description: 終了時刻
     type: string
     example: "2021-09-02T00:00:00+09:00"
-  commitNum:
-    description: 合計コミット数
+  prCommentNum:
+    description: 合計PRレビューコメント数
     type: number
     example: 10
   hours:
-    description: 時間ごとのコミット数
+    description: 時間ごとのPRレビューコメント数
     type: array
     items:
       type: object
@@ -23,7 +23,7 @@ properties:
           type: number
           example: 0
         commit:
-          description: コミット数
+          description: PRレビューコメント数
           type: number
           example: 2
 

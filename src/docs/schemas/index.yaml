@@ -115,3 +115,7 @@ TypeHours:
 CommitHours:
   description: 時間ごとのコミット数
   $ref: "./commitHours.yaml"
+
+PRCommentHours:
+  description: 時間ごとのPRレビューコメント数
+  $ref: "./prCommentHours.yaml"

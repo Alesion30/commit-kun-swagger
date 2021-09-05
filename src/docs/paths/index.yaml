@@ -26,11 +26,14 @@
 /user/hours/commit:
   $ref: "./user/hours/commit.yaml"
 
+/user/hours/pr:
+  $ref: "./user/hours/pr.yaml"
+
 /user/active-log:
   $ref: "./user/active-log.yaml"
 
-/user/commit:
-  $ref: "./user/commit/index.yaml"
+/user/git:
+  $ref: "./user/git/index.yaml"
 
 /user/exp/days:
   $ref: "./user/exp/days.yaml"
