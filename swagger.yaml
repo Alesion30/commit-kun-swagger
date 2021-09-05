@@ -295,7 +295,7 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
-  /user/daily:
+  /user/mission/daily:
     get:
       tags:
         - user
@@ -313,7 +313,36 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DailyMission'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DailyMission'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /user/mission/noraml:
+    get:
+      tags:
+        - user
+      summary: 通常ミッションを取得
+      description: ユーザーの通常ミッションを取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NormalMission'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1584,14 +1613,42 @@ components:
       description: デイリーミッション
       type: object
       properties:
-        dailyMission:
-          description: デイリーミッション
+        mission:
+          description: ミッション
           type: string
           example: Rustを100word以上書く
-        clearFlag:
-          description: クリアフラグ
-          type: bool
-          example: false
+        missionType:
+          description: ミッションタイプ
+          type: string
+          example: DailyMission
+        clearRate:
+          description: クリア率
+          type: number
+          example: 100
+        experiencePoint:
+          description: 経験値
+          type: number
+          example: 50
+    NormalMission:
+      description: 通常ミッション
+      type: object
+      properties:
+        mission:
+          description: ミッション
+          type: string
+          example: Rustを100word以上書く
+        missionType:
+          description: ミッションタイプ
+          type: string
+          example: NormalMission
+        clearRate:
+          description: クリア率
+          type: number
+          example: 100
+        experiencePoint:
+          description: 経験値
+          type: number
+          example: 500
     IntLog:
       description: int型のアクティブログ
       type: object
