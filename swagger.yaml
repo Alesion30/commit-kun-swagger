@@ -425,6 +425,41 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /user/hours/pr:
+    get:
+      tags:
+        - user
+      summary: 1時間ごとのPRレビューコメント数を取得
+      description: ユーザーの期間内の1時間ごとのPRレビューコメント数を取得
+      parameters:
+        - name: userUid
+          in: query
+          description: ユーザーID
+          required: true
+          type: string
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
+        - name: start
+          in: query
+          description: 検索範囲下限時刻
+          type: string
+          example: '2021-09-01T00:00:00.000'
+        - name: end
+          in: query
+          description: 検索範囲上限時刻
+          type: string
+          example: '2021-09-02T00:00:00.000'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PRCommentHours'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
   /user/active-log:
     get:
       tags:
@@ -450,12 +485,12 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
-  /user/commit:
+  /user/git:
     get:
       tags:
         - user
-      summary: コミットをDBに反映
-      description: GitHubからユーザのコミット数を取得し，DBに反映させる
+      summary: 'コミット数,PRレビューコメント数をDBに反映'
+      description: 'GitHubからユーザのコミット数,PRレビューコメント数を取得し，DBに反映させる'
       parameters:
         - name: userUid
           in: query
@@ -1718,7 +1753,7 @@ components:
           description: 終了時刻
           type: string
           example: '2021-09-02T00:00:00+09:00'
-        commit:
+        commitNum:
           description: 合計コミット数
           type: number
           example: 10
@@ -1734,6 +1769,36 @@ components:
                 example: 0
               commit:
                 description: コミット数
+                type: number
+                example: 2
+    PRCommentHours:
+      description: 時間ごとのPRレビューコメント数
+      type: object
+      properties:
+        start:
+          description: 開始時刻
+          type: string
+          example: '2021-09-01T00:00:00+09:00'
+        end:
+          description: 終了時刻
+          type: string
+          example: '2021-09-02T00:00:00+09:00'
+        prCommentNum:
+          description: 合計PRレビューコメント数
+          type: number
+          example: 10
+        hours:
+          description: 時間ごとのPRレビューコメント数
+          type: array
+          items:
+            type: object
+            properties:
+              hour:
+                description: 時間
+                type: number
+                example: 0
+              commit:
+                description: PRレビューコメント数
                 type: number
                 example: 2
   responses:
