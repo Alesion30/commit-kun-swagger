@@ -63,6 +63,10 @@ paths:
                   description: 画像URL
                   type: string
                   example: ''
+                accessToken:
+                  description: アクセスToken
+                  type: string
+                  example: ''
       responses:
         '200':
           content:
@@ -1262,6 +1266,10 @@ components:
           example: fff@fff.com
         imageUrl:
           description: 画像URL
+          type: string
+          example: ''
+        accessToken:
+          description: アクセストークン
           type: string
           example: ''
         createdAt:
