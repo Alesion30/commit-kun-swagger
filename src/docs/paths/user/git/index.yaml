@@ -5,13 +5,6 @@ get:
     - user
   summary: "コミット数,PRレビューコメント数をDBに反映"
   description: "GitHubからユーザのコミット数,PRレビューコメント数を取得し，DBに反映させる"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       $ref: "#/components/responses/200"

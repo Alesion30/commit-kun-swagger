@@ -1,17 +1,10 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - group
   summary: "グループ一覧取得"
   description: "ユーザーの所属するグループ一覧を取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:

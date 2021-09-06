@@ -1,6 +1,6 @@
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - folder
   summary: "フォルダ登録"
@@ -12,10 +12,6 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             path:
               description: パス
               type: string
@@ -31,8 +27,8 @@ post:
       $ref: "#/components/responses/500"
 
 patch:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - folder
   summary: "フォルダ名変更"
@@ -44,16 +40,14 @@ patch:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             path:
               description: 変更前のフォルダへのパス
+              required: true
               type: string
               example: "/test_project/test_folder/"
             changeFolderName:
               description: 変更後のフォルダ名
+              required: true
               type: string
               example: "testFolder"
   responses:

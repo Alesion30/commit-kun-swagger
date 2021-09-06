@@ -1,17 +1,11 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "日毎の経験値を取得"
   description: "ユーザーの期間内の日毎の取得経験値を取得"
   parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
     - name: "start"
       in: query
       description: "検索範囲下限時刻"
@@ -24,6 +18,12 @@ get:
       required: true
       type: string
       example: "2006-01-03T15:04:05.000"
+    - name: "timeDifference"
+      in: query
+      description: "時差"
+      required: true
+      type: number
+      example: 9.0
   responses:
     200:
       content:

@@ -1,27 +1,29 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "言語ごとの作業時間取得"
   description: "ユーザーの言語ごとの作業時間取得"
   parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
     - name: "start"
       in: query
       description: "検索範囲下限時刻"
+      required: true
       type: string
       example: "2006-01-02T15:04:05.000"
     - name: "end"
       in: query
       description: "検索範囲上限時刻"
+      required: true
       type: string
       example: "2006-01-03T15:04:05.000"
+    - name: "timeDifference"
+      in: query
+      description: "時差"
+      required: true
+      type: number
+      example: 9.0
   responses:
     200:
       content:

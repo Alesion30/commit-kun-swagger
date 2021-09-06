@@ -1,6 +1,6 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - group
   summary: "グループのユーザ一覧取得"
@@ -28,8 +28,8 @@ get:
       $ref: "#/components/responses/500"
 
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - group
   summary: "新規グループ作成"
@@ -41,10 +41,6 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             groupName:
               description: グループ名
               type: string

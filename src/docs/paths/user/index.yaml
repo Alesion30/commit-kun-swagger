@@ -1,17 +1,10 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "ユーザー情報取得"
   description: "ユーザーの情報を取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:
@@ -26,8 +19,8 @@ get:
       $ref: "#/components/responses/500"
 
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "ユーザー情報登録"
@@ -39,10 +32,6 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             userName:
               description: ユーザー名
               type: string
@@ -73,8 +62,8 @@ post:
       $ref: "#/components/responses/500"
 
 patch:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "ユーザー情報を更新"
@@ -86,10 +75,6 @@ patch:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             userName:
               description: ユーザー名
               type: string
@@ -100,6 +85,10 @@ patch:
               example: "testuser@creamy.com"
             imageUrl:
               description: 画像URL
+              type: string
+              example: ""
+            accessToken:
+              description: アクセスToken
               type: string
               example: ""
   responses:

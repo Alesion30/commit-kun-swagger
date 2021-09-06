@@ -8,6 +8,8 @@ info:
 servers:
   - url: http://localhost:8880
     description: "Development Server"
+  - url: https://commit-kun.herokuapp.com
+    description: "Production Server"
 
 tags:
   - name: "user"

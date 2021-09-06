@@ -1,27 +1,17 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "1時間ごとのタイプ数を取得"
   description: "ユーザーの期間内の1時間ごとのタイプ数を取得"
   parameters:
-    - name: "userUid"
+    - name: "timeDifference"
       in: query
-      description: "ユーザーID"
+      description: "時差"
       required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
-    - name: "start"
-      in: query
-      description: "検索範囲下限時刻"
-      type: string
-      example: "2021-09-01T00:00:00.000"
-    - name: "end"
-      in: query
-      description: "検索範囲上限時刻"
-      type: string
-      example: "2021-09-02T00:00:00.000"
+      type: number
+      example: 9.0
   responses:
     200:
       content:

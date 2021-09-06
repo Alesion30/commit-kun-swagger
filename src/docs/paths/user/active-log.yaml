@@ -6,12 +6,12 @@ get:
   summary: "作業ログ取得"
   description: "ユーザーの前日と今日の作業記録を取得"
   parameters:
-    - name: "userUid"
+    - name: "timeDifference"
       in: query
-      description: "ユーザーID"
+      description: "時差"
       required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
+      type: number
+      example: 9.0
   responses:
     200:
       content:

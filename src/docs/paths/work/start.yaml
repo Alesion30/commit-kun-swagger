@@ -12,12 +12,9 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             path:
               description: パス
+              required: true
               type: string
               example: "/test_project/main.go"
   responses:

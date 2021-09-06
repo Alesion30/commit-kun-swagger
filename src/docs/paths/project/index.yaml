@@ -1,17 +1,10 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - project
   summary: "プロジェクト取得"
   description: "ユーザーのプロジェクト一覧を取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             
   responses:
     200:
@@ -29,8 +22,8 @@ get:
       $ref: "#/components/responses/500"
 
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - project
   summary: "プロジェクト登録"
@@ -42,12 +35,9 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             projectName:
               description: プロジェクト名
+              required: true
               type: string
               example: "test_project"
   responses:
@@ -61,8 +51,8 @@ post:
       $ref: "#/components/responses/500"
 
 patch:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - project
   summary: "プロジェクト名変更"
@@ -74,16 +64,14 @@ patch:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             projectName:
               description: 変更前のプロジェクト名
+              required: true
               type: string
               example: "test_project"
             changeProjectName:
               description: 変更後のプロジェクト名
+              required: true
               type: string
               example: "testProject"
   responses:

@@ -1,17 +1,10 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "前日と現在のレベル取得"
   description: "ユーザーの前日と現在のレベル取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:

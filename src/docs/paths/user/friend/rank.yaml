@@ -5,13 +5,6 @@ get:
     - user
   summary: "フレンド間でのレベルランキング取得"
   description: "ユーザのフレンド間でのレベルランキングを取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:

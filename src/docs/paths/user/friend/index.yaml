@@ -1,17 +1,10 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "フレンド一覧を取得"
   description: "ログインユーザーのフレンド一覧を取得"
-  parameters:
-    - name: "userUid"
-      in: query
-      description: "ユーザーID"
-      required: true
-      type: string
-      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
   responses:
     200:
       content:
@@ -28,8 +21,8 @@ get:
       $ref: "#/components/responses/500"
 
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "フレンド申請・承認"
@@ -41,10 +34,6 @@ post:
         schema:
           type: object
           properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WK2"
             friendUid:
               description: フレンドユーザーID
               type: string
@@ -67,8 +56,8 @@ post:
       $ref: "#/components/responses/500"
 
 delete:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "フレンド解除"
@@ -81,10 +70,6 @@ delete:
           type: object
           properties:
             properties:
-            userUid:
-              description: ユーザーID
-              type: string
-              example: "xWDG67WK2"
             friendUid:
               description: フレンドユーザーID
               type: string

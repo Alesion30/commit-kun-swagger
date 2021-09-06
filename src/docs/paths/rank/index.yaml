@@ -1,6 +1,6 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - rank
   summary: "レベルランキング取得"
