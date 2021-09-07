@@ -458,10 +458,19 @@ paths:
           $ref: '#/components/responses/500'
   /user/git:
     get:
+      security:
+        - Bearer: []
       tags:
         - user
       summary: 'コミット数,PRレビューコメント数をDBに反映'
       description: 'GitHubからユーザのコミット数,PRレビューコメント数を取得し，DBに反映させる'
+      parameters:
+        - name: timeDifference
+          in: query
+          description: 時差
+          required: true
+          type: number
+          example: 9
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -1707,14 +1716,10 @@ components:
       description: 時間ごとの作業時間
       type: object
       properties:
-        start:
-          description: 開始時刻
+        date:
+          description: 日時
           type: string
-          example: '2021-09-01T00:00:00+09:00'
-        end:
-          description: 終了時刻
-          type: string
-          example: '2021-09-02T00:00:00+09:00'
+          example: '2021-09-01T00:00:00'
         workTime:
           description: 合計作業時間
           type: number
@@ -1737,14 +1742,10 @@ components:
       description: 時間ごとのタイプ数
       type: object
       properties:
-        start:
-          description: 開始時刻
+        date:
+          description: 日時
           type: string
-          example: '2021-09-01T00:00:00+09:00'
-        end:
-          description: 終了時刻
-          type: string
-          example: '2021-09-02T00:00:00+09:00'
+          example: '2021-09-01T00:00:00'
         typeNum:
           description: 合計タイプ数
           type: number
@@ -1767,14 +1768,10 @@ components:
       description: 時間ごとのコミット数
       type: object
       properties:
-        start:
-          description: 開始時刻
+        date:
+          description: 日時
           type: string
-          example: '2021-09-01T00:00:00+09:00'
-        end:
-          description: 終了時刻
-          type: string
-          example: '2021-09-02T00:00:00+09:00'
+          example: '2021-09-01T00:00:00'
         commitNum:
           description: 合計コミット数
           type: number
@@ -1797,14 +1794,10 @@ components:
       description: 時間ごとのPRレビューコメント数
       type: object
       properties:
-        start:
-          description: 開始時刻
+        date:
+          description: 日時
           type: string
-          example: '2021-09-01T00:00:00+09:00'
-        end:
-          description: 終了時刻
-          type: string
-          example: '2021-09-02T00:00:00+09:00'
+          example: '2021-09-01T00:00:00'
         prCommentNum:
           description: 合計PRレビューコメント数
           type: number
