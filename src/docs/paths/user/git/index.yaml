@@ -1,10 +1,17 @@
 get:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - user
   summary: "コミット数,PRレビューコメント数をDBに反映"
   description: "GitHubからユーザのコミット数,PRレビューコメント数を取得し，DBに反映させる"
+  parameters:
+    - name: "timeDifference"
+      in: query
+      description: "時差"
+      required: true
+      type: number
+      example: 9.0
   responses:
     200:
       $ref: "#/components/responses/200"

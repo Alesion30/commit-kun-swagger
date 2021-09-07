@@ -1,13 +1,9 @@
 type: object
 properties:
-  start:
-    description: 開始時刻
+  date:
+    description: 日時
     type: string
-    example: "2021-09-01T00:00:00+09:00"
-  end:
-    description: 終了時刻
-    type: string
-    example: "2021-09-02T00:00:00+09:00"
+    example: "2021-09-01T00:00:00"
   commitNum:
     description: 合計コミット数
     type: number
