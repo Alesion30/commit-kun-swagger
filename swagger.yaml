@@ -332,6 +332,12 @@ paths:
       summary: 1時間ごとの作業時間を取得
       description: ユーザーの期間内の1時間ごとの作業時間を取得
       parameters:
+        - name: date
+          in: query
+          description: 検索日時
+          required: true
+          type: string
+          example: '2021-09-01T00:00:00'
         - name: timeDifference
           in: query
           description: 時差
@@ -359,6 +365,12 @@ paths:
       summary: 1時間ごとのタイプ数を取得
       description: ユーザーの期間内の1時間ごとのタイプ数を取得
       parameters:
+        - name: date
+          in: query
+          description: 検索日時
+          required: true
+          type: string
+          example: '2021-09-01T00:00:00'
         - name: timeDifference
           in: query
           description: 時差
@@ -386,6 +398,12 @@ paths:
       summary: 1時間ごとのコミット数を取得
       description: ユーザーの期間内の1時間ごとのコミット数を取得
       parameters:
+        - name: date
+          in: query
+          description: 検索日時
+          required: true
+          type: string
+          example: '2021-09-01T00:00:00'
         - name: timeDifference
           in: query
           description: 時差
@@ -413,6 +431,12 @@ paths:
       summary: 1時間ごとのPRレビューコメント数を取得
       description: ユーザーの期間内の1時間ごとのPRレビューコメント数を取得
       parameters:
+        - name: date
+          in: query
+          description: 検索日時
+          required: true
+          type: string
+          example: '2021-09-01T00:00:00'
         - name: timeDifference
           in: query
           description: 時差
