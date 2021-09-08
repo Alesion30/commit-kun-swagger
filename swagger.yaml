@@ -267,6 +267,13 @@ paths:
         - user
       summary: 前日と現在のレベル取得
       description: ユーザーの前日と現在のレベル取得
+      parameters:
+        - name: timeDifference
+          in: query
+          description: 時差
+          required: true
+          type: number
+          example: 9
       responses:
         '200':
           content:
