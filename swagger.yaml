@@ -202,6 +202,8 @@ paths:
           $ref: '#/components/responses/500'
   /user/friend/rank:
     get:
+      security:
+        - Bearer: []
       tags:
         - user
       summary: フレンド間でのレベルランキング取得
@@ -464,6 +466,8 @@ paths:
           $ref: '#/components/responses/500'
   /user/active-log:
     get:
+      security:
+        - Bearer: []
       tags:
         - user
       summary: 作業ログ取得
@@ -581,6 +585,8 @@ paths:
         '500':
           $ref: '#/components/responses/500'
     post:
+      security:
+        - Bearer: []
       tags:
         - group
       summary: 新規グループ作成
@@ -1165,6 +1171,8 @@ paths:
           $ref: '#/components/responses/500'
   /work/start:
     post:
+      security:
+        - Bearer: []
       tags:
         - work
       summary: 作業開始
@@ -1192,6 +1200,8 @@ paths:
           $ref: '#/components/responses/500'
   /work/end:
     post:
+      security:
+        - Bearer: []
       tags:
         - work
       summary: 作業終了
