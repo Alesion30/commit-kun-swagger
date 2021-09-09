@@ -469,6 +469,12 @@ paths:
       summary: 作業ログ取得
       description: ユーザーの前日と今日の作業記録を取得
       parameters:
+        - name: date
+          in: query
+          description: 検索日時
+          required: true
+          type: string
+          example: '2021-09-01T00:00:00'
         - name: timeDifference
           in: query
           description: 時差
