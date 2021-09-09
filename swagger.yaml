@@ -862,6 +862,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 projectName:
                   description: プロジェクト名
                   required: true
@@ -890,6 +895,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 projectName:
                   description: 変更前のプロジェクト名
                   required: true
@@ -918,6 +928,11 @@ paths:
       summary: プロジェクト内の作業時間を取得
       description: ユーザーのプロジェクトのフォルダ・ファイルごとの作業時間一覧を取得
       parameters:
+        - name: userUid
+          in: query
+          description: ユーザID
+          required: true
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
         - name: projectName
           in: query
           description: プロジェクト名
@@ -971,6 +986,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: パス
                   type: string
@@ -998,6 +1018,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: 変更前のフォルダへのパス
                   required: true
@@ -1026,6 +1051,11 @@ paths:
       summary: フォルダ内の作業時間を取得
       description: ユーザーのフォルダ内のファイルごとの作業時間一覧を取得
       parameters:
+        - name: userUid
+          in: query
+          description: ユーザID
+          required: true
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
         - name: path
           in: query
           description: フォルダパス
@@ -1079,6 +1109,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: パス
                   type: string
@@ -1106,6 +1141,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: 変更前のフォルダへのパス
                   required: true
@@ -1134,6 +1174,11 @@ paths:
       summary: ファイルの作業時間を取得
       description: ユーザーのファイルの作業ごとの作業時間一覧を取得
       parameters:
+        - name: userUid
+          in: query
+          description: ユーザID
+          required: true
+          example: xWDG67WKXjROfE22eMEOd7rvYU12
         - name: path
           in: query
           description: フォルダパス
@@ -1184,6 +1229,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: パス
                   required: true
@@ -1213,6 +1263,11 @@ paths:
             schema:
               type: object
               properties:
+                userUid:
+                  description: ユーザーID
+                  required: true
+                  type: string
+                  example: xWDG67WKXjROfE22eMEOd7rvYU12
                 path:
                   description: パス
                   required: true
