@@ -21,8 +21,8 @@ get:
       $ref: "#/components/responses/500"
 
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - group
   summary: "新規グループ作成"

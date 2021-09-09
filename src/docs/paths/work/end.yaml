@@ -1,6 +1,6 @@
 post:
-  # security:
-  #   - Bearer: []
+  security:
+    - Bearer: []
   tags:
     - work
   summary: "作業終了"
