@@ -6,6 +6,11 @@ get:
   summary: "プロジェクト内の作業時間を取得"
   description: "ユーザーのプロジェクトのフォルダ・ファイルごとの作業時間一覧を取得"
   parameters:
+    - name: "userUid"
+      in: query
+      description: "ユーザID"
+      required: true
+      example: "xWDG67WKXjROfE22eMEOd7rvYU12"
     - name: "projectName"
       in: query
       description: "プロジェクト名"

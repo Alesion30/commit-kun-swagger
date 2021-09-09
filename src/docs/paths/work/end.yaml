@@ -12,6 +12,11 @@ post:
         schema:
           type: object
           properties:
+            userUid:
+              description: ユーザーID
+              required: true
+              type: string
+              example: "xWDG67WKXjROfE22eMEOd7rvYU12"
             path:
               description: パス
               required: true
